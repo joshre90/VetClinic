@@ -28,5 +28,15 @@ public Collection<String> listConditions(){
     }
     return medcond;
 }
+public int age(){
+    int animalage;
+// criar condição de idade para tipo de animal
+return 0;
 
+}
+
+public Collection<String> listCases(){
+     ArrayList<String> cases = new ArrayList<String>(); // creates an array list of cases, that will include animal type, animal name, animal age and ilness
+return cases;
+}
 }
