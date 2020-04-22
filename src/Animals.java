@@ -27,4 +27,6 @@ public Collection<String> listConditions(){
     medcond.add(this.condition[i]);//populating list with array of conditions
     }
     return medcond;
-}}
+}
+
+}
