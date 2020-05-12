@@ -11,8 +11,8 @@ public class AnimalList{
 		
 		//Number of animals to be generated
 		private int numOfAnimals = 100; //(1000) This can change according to user input
-		private int numDogs = (int) (numOfAnimals*0.45);
-		private int numCats = (int) (numOfAnimals*0.20);
+		private int numDogs = (int) (numOfAnimals*0.45); //65% Dogs
+		private int numCats = (int) (numOfAnimals*0.20); //30% Cats
 		private int numRabbits = (int) (numOfAnimals*.05);
 		private int numMouse =(int) (numOfAnimals*.05);
 		private int numHorse =(int) (numOfAnimals*.05);
@@ -21,13 +21,14 @@ public class AnimalList{
 		private int numFish =(int) (numOfAnimals*.05);
 		private int numParrot = numOfAnimals - numDogs - numCats - numRabbits - numMouse - numHorse - numSneak - numLizzard - numFish;
 		
-		
+		//This one
 		protected ArrayList<PetAnimals> animals = new ArrayList<PetAnimals>();
+		
 		Animal an = new Animal(name, age, condition);
 		
 		AnimalDataGenerator adg = new AnimalDataGenerator();
 		
-		//Instances of the inner classes of the class Animal
+		//Variables of the inner classes of the class Animal
 		Animal.dog dog;
 		Animal.cat cat;
 		Animal.rabbit rabbit;
@@ -40,12 +41,13 @@ public class AnimalList{
 		
 		
 	
-		//Method that generates the animals
+	//Method that generates the animals
 	  public void generateAnimals() { 
 	  ///Loop to generate dogs
 	  for (int i=0; i<numDogs; i++ ) {
 		  String animalData = adg.getRandomData();
 		  String [] animalParts = animalData.split(" ");
+		  //Create instance
 		  dog = an.new dog(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2]);
 		  animals.add(dog);
 	  }

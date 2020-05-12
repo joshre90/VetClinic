@@ -4,7 +4,7 @@ public class Animal extends PetAnimals{
 	
 
 
-
+	//Constructor
 	public Animal(String name, int age, String medCondition) {
 		super(name, age, medCondition);
 		// TODO Auto-generated constructor stub

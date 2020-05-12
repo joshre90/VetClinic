@@ -5,7 +5,6 @@ public abstract class ClinicStaff {
 	
 	protected String firstName;
 	protected String surname;
-	//private String title;
 	protected final int staffID;
 	protected int salary;
 	
@@ -15,7 +14,6 @@ public abstract class ClinicStaff {
 
 		this.firstName = firstName;
 		this.surname = surname;
-		//this.title = title;
 		this.staffID = staffID;
 		this.salary = 1;
 		

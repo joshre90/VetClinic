@@ -15,43 +15,4 @@ public abstract class PetAnimals {
 		this.age = age;
 		this.medCondition = medCondition;
 	}
-
-
-	public String getName() {
-		return name;
-	}
-
-
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-
-	public int getAge() {
-		return age;
-	}
-
-
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-
-
-	public String getMedCondition() {
-		return medCondition;
-	}
-
-
-
-	public void setMedCondition(String medCondition) {
-		this.medCondition = medCondition;
-	}
-	
-	
-	
-
 }
