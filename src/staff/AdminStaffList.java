@@ -8,6 +8,7 @@ public class AdminStaffList {
 	private String surname;
 	private int staffID;
 	protected int salary;
+	private String title;
 	private int j = 0; // Counter used for the staffID
 
 	// Number of medical staff to be generated
@@ -20,7 +21,7 @@ public class AdminStaffList {
 
 	// ArrayList from the Superclass ClinicStaff where Medical will be Stored
 	ArrayList<ClinicStaff> administrativeStaff = new ArrayList<ClinicStaff>();
-	Admin adminStaff = new Admin(firstName, surname, staffID, salary);
+	Admin adminStaff = new Admin(firstName, surname, staffID, salary, title);
 
 	// Instance of the class StaffDataGenerator
 	StaffDataGenerator sdg = new StaffDataGenerator();
@@ -32,7 +33,7 @@ public class AdminStaffList {
 	Admin.CustomerService customServ;
 	Admin.ITSupport itGuy;
 
-	public void generateAdminStaff() {
+	public ArrayList<ClinicStaff> generateAdminStaff() {
 		/// Loop to generate dogs
 		for (int i = 0; i < numManager; i++) {
 			j++;
@@ -40,7 +41,7 @@ public class AdminStaffList {
 			String[] adminParts = adminData.split(" ");
 			// Create a class for salary
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
-			manager = adminStaff.new Manager(adminParts[0], adminParts[1], staffID, 0);
+			manager = adminStaff.new Manager(adminParts[0], adminParts[1], staffID, 0, "Manager");
 			administrativeStaff.add(manager);
 		}
 
@@ -51,7 +52,7 @@ public class AdminStaffList {
 			String[] adminParts = adminData.split(" ");
 			// Create a class for salary
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
-			assistant = adminStaff.new Assistant(adminParts[0], adminParts[1], staffID, 0);
+			assistant = adminStaff.new Assistant(adminParts[0], adminParts[1], staffID, 0, "Assistant");
 			administrativeStaff.add(assistant);
 		}
 
@@ -62,7 +63,7 @@ public class AdminStaffList {
 			String[] adminParts = adminData.split(" ");
 			// Create a class for salary
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
-			receptionist = adminStaff.new Receptionist(adminParts[0], adminParts[1], staffID, 0);
+			receptionist = adminStaff.new Receptionist(adminParts[0], adminParts[1], staffID, 0, "Receptionist");
 			administrativeStaff.add(receptionist);
 		}
 
@@ -73,7 +74,7 @@ public class AdminStaffList {
 			String[] adminParts = adminData.split(" ");
 			// Create a class for salary
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
-			customServ = adminStaff.new CustomerService(adminParts[0], adminParts[1], staffID, 0);
+			customServ = adminStaff.new CustomerService(adminParts[0], adminParts[1], staffID, 0, "Customer Service Rep");
 			administrativeStaff.add(customServ);
 		}
 
@@ -84,12 +85,11 @@ public class AdminStaffList {
 			String[] adminParts = adminData.split(" ");
 			// Create a class for salary
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
-			itGuy = adminStaff.new ITSupport(adminParts[0], adminParts[1], staffID, 0);
+			itGuy = adminStaff.new ITSupport(adminParts[0], adminParts[1], staffID, 0, "IT Techie");
 			administrativeStaff.add(itGuy);
 		}
 
-		for (ClinicStaff as : administrativeStaff) {
-			System.out.println(as);
-		}
+
+		return administrativeStaff;
 	}
 }

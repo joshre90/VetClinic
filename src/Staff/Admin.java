@@ -3,23 +3,23 @@ package staff;
 public class Admin extends ClinicStaff{
 
 	
-	public Admin(String firstName, String surname, int staffID, int salary) {
-		super(firstName, surname, staffID, salary);
+	public Admin(String firstName, String surname, int staffID, int salary, String title) {
+		super(firstName, surname, staffID, salary, title);
 		// TODO Auto-generated constructor stub
 	}
 
 
 	public class Manager extends ClinicStaff{
 
-		public Manager(String firstName, String surname, int staffID, int salary) {
-			super(firstName, surname, staffID, salary);
+		public Manager(String firstName, String surname, int staffID, int salary, String title) {
+			super(firstName, surname, staffID, salary,title);
 			// TODO Auto-generated constructor stub
 		}
 		
 		@Override
 		public String toString() {
 			
-			return "Manager: " + firstName + " " + surname + " " + staffID + " " + salary;
+			return title + ": " + firstName + " " + surname + " " + staffID + " " + salary;
 		}
 		
 	}
@@ -28,15 +28,15 @@ public class Admin extends ClinicStaff{
 	public class Assistant extends ClinicStaff{
 		
 		
-	public Assistant (String firstName, String surname, int staffID, int salary) {
-			super(firstName, surname, staffID, salary);
+	public Assistant (String firstName, String surname, int staffID, int salary, String title) {
+			super(firstName, surname, staffID, salary, title);
 			// TODO Auto-generated constructor stub
 		}
 	
 	@Override
 	public String toString() {
 		
-		return "Assitant: " + firstName + " " + surname + " " + staffID + " " + salary;
+		return title + ": " + firstName + " " + surname + " " + staffID + " " + salary;
 	}
 
 	}
@@ -44,15 +44,15 @@ public class Admin extends ClinicStaff{
 	
 	public class Receptionist extends ClinicStaff{
 
-		public Receptionist(String firstName, String surname, int staffID, int salary) {
-			super(firstName, surname, staffID, salary);
+		public Receptionist(String firstName, String surname, int staffID, int salary, String title) {
+			super(firstName, surname, staffID, salary, title);
 			// TODO Auto-generated constructor stub
 		}
 		
 		@Override
 		public String toString() {
 			
-			return "Receptionist: " + firstName + " " + surname + " " + staffID + " " + salary;
+			return title + ": " + firstName + " " + surname + " " + staffID + " " + salary;
 		}
 		
 	}
@@ -60,30 +60,30 @@ public class Admin extends ClinicStaff{
 	
 	public class CustomerService extends ClinicStaff{
 
-		public CustomerService(String firstName, String surname, int staffID, int salary) {
-			super(firstName, surname, staffID, salary);
+		public CustomerService(String firstName, String surname, int staffID, int salary, String title) {
+			super(firstName, surname, staffID, salary, title);
 			// TODO Auto-generated constructor stub
 		}
 		
 		@Override
 		public String toString() {
 			
-			return "Customer Service Rep: " + firstName + " " + surname + " " + staffID + " " + salary;
+			return title +  ": " + firstName + " " + surname + " " + staffID + " " + salary;
 		}
 		
 	}
 	
 	public class ITSupport extends ClinicStaff{
 
-		public ITSupport(String firstName, String surname, int staffID, int salary) {
-			super(firstName, surname, staffID, salary);
+		public ITSupport(String firstName, String surname, int staffID, int salary, String title) {
+			super(firstName, surname, staffID, salary, title);
 			// TODO Auto-generated constructor stub
 		}
 		
 		@Override
 		public String toString() {
 			
-			return "IT Techie: " + firstName + " " + surname + " " + staffID + " " + salary;
+			return title + ": " + firstName + " " + surname + " " + staffID + " " + salary;
 		}
 		
 	}

@@ -2,67 +2,67 @@ package staff;
 
 public class Medical extends ClinicStaff{
 
-	public Medical(String firstName, String surname, int staffID, int salary) {
-		super(firstName, surname, staffID, salary);
+	public Medical(String firstName, String surname, int staffID, int salary, String title) {
+		super(firstName, surname, staffID, salary, title);
 		// TODO Auto-generated constructor stub
 	}
 
 	public class Veterinarian extends ClinicStaff {
 
-		public Veterinarian(String firstName, String surname, int staffID, int salary) {
-			super(firstName, surname, staffID, salary);
+		public Veterinarian(String firstName, String surname, int staffID, int salary, String title) {
+			super(firstName, surname, staffID, salary, title);
 			// TODO Auto-generated constructor stub
 		}
 		
 		@Override
 		public String toString() {
 			
-			return "Veterinarian: " + firstName + " " + surname + " " + staffID + " " + salary;
+			return title + ": " + firstName + " " + surname + " " + staffID + " " + salary;
 		}
 
 	}
 
 	public class TraineeVet extends ClinicStaff {
 
-		public TraineeVet(String firstName, String surname, int staffID, int salary) {
-			super(firstName, surname, staffID, salary);
+		public TraineeVet(String firstName, String surname, int staffID, int salary, String title) {
+			super(firstName, surname, staffID, salary, title);
 			// TODO Auto-generated constructor stub
 		}
 		
 		@Override
 		public String toString() {
 			
-			return "Trainee veterinarian: " + firstName + " " + surname + " " + staffID + " " + salary;
+			return title + ": " + firstName + " " + surname + " " + staffID + " " + salary;
 		}
 
 	}
 
 	public class Nurse extends ClinicStaff {
 
-		public Nurse(String firstName, String surname, int staffID, int salary) {
-			super(firstName, surname, staffID, salary);
+		public Nurse(String firstName, String surname, int staffID, int salary, String title) {
+			super(firstName, surname, staffID, salary, title);
 			// TODO Auto-generated constructor stub
 		}
 		
 		@Override
 		public String toString() {
 			
-			return "Nurse: " + firstName + " " + surname + " " + staffID + " " + salary;
+			return title + ": " + firstName + " " + surname + " " + staffID + " " + salary;
 		}
 
 	}
 
 	public class VeterinarianAssistant extends ClinicStaff {
 
-		public VeterinarianAssistant(String firstName, String surname, int staffID, int salary) {
-			super(firstName, surname, staffID, salary);
+		public VeterinarianAssistant(String firstName, String surname, int staffID, int salary, String title) {
+			super(firstName, surname, staffID, salary, title);
 			// TODO Auto-generated constructor stub
 		}
 		
 		@Override
 		public String toString() {
 			
-			return "Vet Assistant: " + firstName + " " + surname + " " + staffID + " " + salary;
+			return title + ": " + firstName + " " + surname + " " + staffID + " " + salary;
 		}
 		
 		
@@ -71,15 +71,15 @@ public class Medical extends ClinicStaff{
 
 	public class PetHairStylist extends ClinicStaff {
 
-		public PetHairStylist(String firstName, String surname, int staffID, int salary) {
-			super(firstName, surname, staffID, salary);
+		public PetHairStylist(String firstName, String surname, int staffID, int salary, String title) {
+			super(firstName, surname, staffID, salary, title);
 			// TODO Auto-generated constructor stub
 		}
 		
 		@Override
 		public String toString() {
 			
-			return "Pet Hair Stylist: " + firstName + " " + surname + " " + staffID + " " + salary;
+			return title + ": " + firstName + " " + surname + " " + staffID + " " + salary;
 		}
 
 	}
