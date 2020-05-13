@@ -1,4 +1,4 @@
-package staff;
+package Staff;
 
 import java.util.ArrayList;
 
@@ -8,7 +8,6 @@ public class AdminStaffList {
 	private String surname;
 	private int staffID;
 	protected int salary;
-	private String title;
 	private int j = 0; // Counter used for the staffID
 
 	// Number of medical staff to be generated
@@ -21,7 +20,13 @@ public class AdminStaffList {
 
 	// ArrayList from the Superclass ClinicStaff where Medical will be Stored
 	ArrayList<ClinicStaff> administrativeStaff = new ArrayList<ClinicStaff>();
-	Admin adminStaff = new Admin(firstName, surname, staffID, salary, title);
+	Admin adminStaff = new Admin(firstName, surname, staffID, salary);
+	
+	ArrayList<ClinicStaff> a = new ArrayList<ClinicStaff>();//assistant
+	ArrayList<ClinicStaff> cs = new ArrayList<ClinicStaff>();// customer service
+	ArrayList<ClinicStaff> it = new ArrayList<ClinicStaff>();//it support
+	ArrayList<ClinicStaff> m = new ArrayList<ClinicStaff>();// manager
+	ArrayList<ClinicStaff> r = new ArrayList<ClinicStaff>();// receptionist
 
 	// Instance of the class StaffDataGenerator
 	StaffDataGenerator sdg = new StaffDataGenerator();
@@ -33,63 +38,94 @@ public class AdminStaffList {
 	Admin.CustomerService customServ;
 	Admin.ITSupport itGuy;
 
-	public ArrayList<ClinicStaff> generateAdminStaff() {
-		/// Loop to generate dogs
+	public void generateManager() {
+		/// Loop to generate manager
 		for (int i = 0; i < numManager; i++) {
 			j++;
 			String adminData = sdg.getRandomData();
 			String[] adminParts = adminData.split(" ");
 			// Create a class for salary
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
-			manager = adminStaff.new Manager(adminParts[0], adminParts[1], staffID, 0, "Manager");
+			manager = adminStaff.new Manager(adminParts[0], adminParts[1], staffID, 0);
 			administrativeStaff.add(manager);
+			m.add(manager);
+			
 		}
+		for (ClinicStaff manager : m) {
+			System.out.println(manager);
+		}}
 
-		/// Loop to generate dogs
+	public void generateAssistant() {
+		/// Loop to generate assistant
 		for (int i = 0; i < numAssistant; i++) {
 			j++;
 			String adminData = sdg.getRandomData();
 			String[] adminParts = adminData.split(" ");
 			// Create a class for salary
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
-			assistant = adminStaff.new Assistant(adminParts[0], adminParts[1], staffID, 0, "Assistant");
+			assistant = adminStaff.new Assistant(adminParts[0], adminParts[1], staffID, 0);
 			administrativeStaff.add(assistant);
+			a.add(assistant);
 		}
+		for (ClinicStaff a : a) {
+			System.out.println(a);
+		}
+	}
 
-		/// Loop to generate dogs
+	public void generateReceptionist() {
+		/// Loop to generate recep
 		for (int i = 0; i < numReceptionist; i++) {
 			j++;
 			String adminData = sdg.getRandomData();
 			String[] adminParts = adminData.split(" ");
 			// Create a class for salary
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
-			receptionist = adminStaff.new Receptionist(adminParts[0], adminParts[1], staffID, 0, "Receptionist");
+			receptionist = adminStaff.new Receptionist(adminParts[0], adminParts[1], staffID, 0);
 			administrativeStaff.add(receptionist);
+			r.add(receptionist);
 		}
-
-		/// Loop to generate dogs
+		for (ClinicStaff recep : r) {
+			System.out.println(recep);
+		}
+	}
+	public void generateCS() {
+		/// Loop to generate cs
 		for (int i = 0; i < numCustomServ; i++) {
 			j++;
 			String adminData = sdg.getRandomData();
 			String[] adminParts = adminData.split(" ");
 			// Create a class for salary
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
-			customServ = adminStaff.new CustomerService(adminParts[0], adminParts[1], staffID, 0, "Customer Service Rep");
+			customServ = adminStaff.new CustomerService(adminParts[0], adminParts[1], staffID, 0);
 			administrativeStaff.add(customServ);
+			cs.add(customServ);
 		}
+		for (ClinicStaff cs : cs) {
+			System.out.println(cs);
+		}}
 
-		/// Loop to generate dogs
+	public void generateIt() {
+		/// Loop to generate it guy
 		for (int i = 0; i < numIT; i++) {
 			j++;
 			String adminData = sdg.getRandomData();
 			String[] adminParts = adminData.split(" ");
 			// Create a class for salary
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
-			itGuy = adminStaff.new ITSupport(adminParts[0], adminParts[1], staffID, 0, "IT Techie");
+			itGuy = adminStaff.new ITSupport(adminParts[0], adminParts[1], staffID, 0);
 			administrativeStaff.add(itGuy);
+			it.add(itGuy);
 		}
+		
+		for (ClinicStaff it : it) {
+			System.out.println(it);
+		}}
 
-
-		return administrativeStaff;
+	public void generateAdminStaff() {
+		generateAssistant();
+		generateCS();
+		generateIt();
+        generateManager();
+        generateReceptionist();
+		}
 	}
-}
